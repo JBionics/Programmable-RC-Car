@@ -82,8 +82,12 @@ public class RCController {
     // Creates a new thread every time it's called
     public synchronized void processProgrammedSequence(RCControllerGUI gui) {
         String[] sequenceCmds = m_txtParser.getSequence();
-        SequenceThread s = new SequenceThread(this, gui, sequenceCmds);
-        new Thread(s).start();
+        if (sequenceCmds != null) {
+	        SequenceThread s = new SequenceThread(this, gui, sequenceCmds);
+	        new Thread(s).start();
+        } else {
+        	gui.showWarning("Could not process sequence.txt.\nMake sure that the file exists in the same directory as Programmable RC Controller.");
+        }
     }
 
     // Returns port name of serial port in use

@@ -303,14 +303,24 @@ public class RCControllerGUI {
         
         // Images used for directions
         m_iconImages = new ImageIcon[8];
-        m_iconImages[0] = new ImageIcon("images/up_off.gif");
-        m_iconImages[1] = new ImageIcon("images/down_off.gif");
-        m_iconImages[2] = new ImageIcon("images/left_off.gif");
-        m_iconImages[3] = new ImageIcon("images/right_off.gif");
-        m_iconImages[4] = new ImageIcon("images/up_on.gif");
-        m_iconImages[5] = new ImageIcon("images/down_on.gif");
-        m_iconImages[6] = new ImageIcon("images/left_on.gif");
-        m_iconImages[7] = new ImageIcon("images/right_on.gif");
+        String[] imgPaths = new String[8];
+        imgPaths[0] = "up_off.gif";
+        imgPaths[1] = "down_off.gif";
+        imgPaths[2] = "left_off.gif";
+        imgPaths[3] = "right_off.gif";
+        imgPaths[4] = "up_on.gif";
+        imgPaths[5] = "down_on.gif";
+        imgPaths[6] = "left_on.gif";
+        imgPaths[7] = "right_on.gif";
+        
+        for (int i = 0; i < m_iconImages.length; i++) {
+        	try {
+            	m_iconImages[i] = new ImageIcon(getClass().getResource(imgPaths[i]));
+        	} catch (Exception e) {
+                System.out.println("Could not load image resource: " + e.getMessage());
+                m_iconImages[i] = new ImageIcon();
+        	}
+        }
         
         // Labels that the images will go on
         m_lblDirections = new JLabel[4];

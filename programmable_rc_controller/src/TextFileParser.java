@@ -89,6 +89,7 @@ public class TextFileParser {
               m_dataInStream.close();
             } catch (Exception e) {//Catch exception if any
               System.err.println("Error: " + e.getMessage());
+              return null;
             }
         return sequenceCmds.toArray(new String[sequenceCmds.size()]);
     }
