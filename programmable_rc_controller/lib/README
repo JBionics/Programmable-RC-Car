@@ -1,4 +1,20 @@
-RXTXComm Library is needed from http://rxtx.qbang.org/.
+RXTXComm Library is used in this project (source: http://rxtx.qbang.org/).
 
-Installation instructions:
+How to Use in Eclipse:
+
+- Copy RXTXcomm.jar, *.dll files, or .jnilib file (for non-win32) to the lib directory of your project
+- Under Project | Properties | Java Build Path | Libraries
+- click Add JARs... Button
+- Select the RXTXComm.jar from lib directory
+- Jar should now be in the Build Path
+- expand the RXTXComm.jar entry in the list and select "Native Library Location"
+- Select the project lib directory and apply
+
+Alternative Installation instructions:
 http://rxtx.qbang.org/wiki/index.php/Installation
+
+If running Mac OSX, you can download the updated jnilib from here, but it is also included in the lib folder of this project:
+http://blog.iharder.net/wp-content/uploads/2009/08/librxtxSerial.jnilib
+(source: http://blog.iharder.net/2009/08/18/rxtx-java-6-and-librxtxserial-jnilib-on-intel-mac-os-x/)
+
+This will fix the unspecified linker error if you use the lib from the RXTXComm website.
