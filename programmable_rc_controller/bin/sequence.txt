@@ -1,0 +1,21 @@
+# Programmable Sequence File
+# 
+# Directions
+# FF = Forward, FR = Forward & Right, BB = Backward, etc.
+# SS = Stop
+#  
+# FL FF FR
+# LL SS RR
+# BL BB BR
+#
+# Invalid Directions: FB, LR
+#
+# Format:
+# <Direction>, <Speed: Range 0 - 255>, <Duration in Milliseconds>
+#
+# Ex: FF, 255, 100
+# Drives forward at full speed (255) for 100 ms
+#
+FL, 255, 250
+FR, 255, 400
+FL, 255, 100
